@@ -38,12 +38,12 @@
   
   * 扣减单个用户币 coinTrade?appid={AppID}&coinname={CoinName}&coinnum={Num}&ctime={UnixTime}&memo={MemoWord}&serialid={TradeUniqueSerialId}&uid={UserIdx}&sign={Sign}
   
-  * 扣减多个用户币 coinTradeEx，必须通过POST提交
+  * 扣减多个用户币 coinTradeEx?appid={AppID}&ctime={UnixTime}&sign={Sign}，必须通过POST提交
   
     ``` 
-    { 
+    {
     	tradeid:{UniqueTradeId}, 
-    	memo:{MeomoWord}, 
+    	memo:{MemoWord}, 
     	orders:{
     		{ coinname:{CoinName1}, coinnum:{CoinNum1}, uid:{UserIdx1} },
     		{ coinname:{CoinName2}, coinnum:{CoinNum2}, uid:{UserIdx2} }
