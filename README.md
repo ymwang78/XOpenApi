@@ -30,13 +30,13 @@
       
 ## 账号接口
 
-  * 通过SESSIONID进行账号验证 authBySessionId?appid={AppID}&ctime={UnixTime}&sessionid={SessionId}&siteid={SiteId}&sign={Sign}  
+  * 通过SESSIONID进行账号验证 authBySessionId?appid={AppID}&ctime={UnixTime}&sessionid={SessionId}&smethod={SignMethod}&siteid={SiteId}&sign={Sign}  
   
 ## 虚拟币接口
 
-  * 查询单个用户币 coinQuery?appid={AppID}&coinname={CoinName}&ctime={UnixTime}&uid={UserIdx}&sign={Sign}
+  * 查询单个用户币 coinQuery?appid={AppID}&coinname={CoinName}&ctime={UnixTime}&smethod={SignMethod}&uid={UserIdx}&sign={Sign}
   
-  * 扣减单个用户币 coinTrade?appid={AppID}&coinname={CoinName}&coinnum={Num}&ctime={UnixTime}&memo={MemoWord}&serialid={TradeUniqueSerialId}&uid={UserIdx}&sign={Sign}
+  * 扣减单个用户币 coinTrade?appid={AppID}&coinname={CoinName}&coinnum={Num}&ctime={UnixTime}&memo={MemoWord}&serialid={TradeUniqueSerialId}&smethod={SignMethod}&uid={UserIdx}&sign={Sign}
   
   * 扣减多个用户币 coinTradeEx?appid={AppID}&ctime={UnixTime}&sign={Sign}，必须通过POST提交
   
