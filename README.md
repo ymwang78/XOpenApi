@@ -45,8 +45,8 @@
     	tradeid:{UniqueTradeId}, 
     	memo:{MemoWord}, 
     	orders:{
-    		{ coinname:{CoinName1}, coinnum:{CoinNum1}, uid:{UserIdx1} },
-    		{ coinname:{CoinName2}, coinnum:{CoinNum2}, uid:{UserIdx2} }
+    		{ coinname:{CoinName1}, coinnum:{CoinNum1}, useridx:{UserIdx1} },
+    		{ coinname:{CoinName2}, coinnum:{CoinNum2}, useridx:{UserIdx2} }
     	}
     }
     ```
