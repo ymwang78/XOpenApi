@@ -36,7 +36,9 @@
 
   * 查询单个用户币 coinQuery?appid={AppID}&coinname={CoinName}&ctime={UnixTime}&smethod={SignMethod}&uid={UserIdx}&sign={Sign}
   
-  * 扣减单个用户币 coinTrade?appid={AppID}&coinname={CoinName}&coinnum={Num}&ctime={UnixTime}&memo={MemoWord}&serialid={TradeUniqueSerialId}&smethod={SignMethod}&uid={UserIdx}&sign={Sign}
+  * 扣减单个用户币 coinTrade?appid={AppID}&allowneg=true&coinname={CoinName}&coinnum={Num}&ctime={UnixTime}&memo={MemoWord}&serialid={TradeUniqueSerialId}&smethod={SignMethod}&uid={UserIdx}&sign={Sign}
+  
+     * allowneg 可选，是否允许扣减或者增加后剩余币为负数，不填是不允许
   
   * 扣减多个用户币 coinTradeEx?appid={AppID}&ctime={UnixTime}&smethod={SignMethod}&sign={Sign}，必须通过POST提交
   
