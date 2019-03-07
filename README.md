@@ -11,14 +11,15 @@
     * 接口支持HTTP/HTTPS, 除非明确说明例外, 否则同时支持GET/POST方式调用，POST方式下参数在BODY以JSON格式传递
     * 每次接口调用需传递调用时间ctime={unixtime}，跟平台时间超过30秒的将直接被拒绝，因此应用应确保自己机器时钟准确
     * 签名规则:
-      * 告知签名规则smethod={SignMethod}，目前支持 sha1/md5，如果能够支持sha1，请使用sha1
+      * 告知签名规则smethod={SignMethod}，目前支持 sha256/sha1/md5，如果能够支持sha256，请使用sha256
       * 所有传递参数（除sign本身外）按KEY字母顺序排序
       * 所有传递值进行urlencode编码
+      * 如果是POST，URL增加 &bodyhash={SignMethod{req.body}}，即把body按照smethod对body产生一个摘要
       * 尾部增加&appkey={AppKey}
       * 最终拼接成a=v1&b=v2&c=v3&appkey={AppKey}的形式，进行签名得到{sign}
       * 调用时
         * GET：a=v1&b=v2&c=v3&sign={sign}
-        * POST: { a:v1, b:v2, c:v3, sign:{sign}}
+        * POST: { a:v1, b:v2, c:v3}, 
       * 本接口默认定义的ctime, smethod, appkey, sign 以及其值都使用全小写模式
       
   * 返回统一定义
@@ -40,7 +41,7 @@
   
      * allowneg 可选，是否允许扣减或者增加后剩余币为负数，不填是不允许
   
-  * 扣减多个用户币 coinTradeEx?appid={AppID}&ctime={UnixTime}&smethod={SignMethod}&sign={Sign}，必须通过POST提交
+  * 扣减多个用户币 coinTradeEx?appid={AppID}&bodyhash={BodyHash}&ctime={UnixTime}&smethod={SignMethod}&sign={Sign}，必须通过POST提交
   
     ``` 
     {
